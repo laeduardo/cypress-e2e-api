@@ -16,9 +16,9 @@ describe('Funcionalidade de Admin', () => {
       cy.get('@select_user_role_admin').click()
 
       cy.get('.oxd-autocomplete-text-input > input').as('field_employee_name')      
-      cy.get('@field_employee_name').type('Shreshta K adtech')
+      cy.get('@field_employee_name').type('a')
       
-      cy.get('.oxd-autocomplete-option > span').as('select_employee_name')      
+      cy.get('.oxd-autocomplete-dropdown > :nth-child(2)').as('select_employee_name')   
       cy.get('@select_employee_name').click()
 
       cy.get(':nth-child(3) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text > .oxd-select-text--after > .oxd-icon').as('button_status')      
