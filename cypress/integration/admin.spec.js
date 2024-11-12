@@ -16,7 +16,7 @@ describe('Funcionalidade de Admin', () => {
       cy.get('@select_user_role_admin').click()
 
       cy.get('.oxd-autocomplete-text-input > input').as('field_employee_name')      
-      cy.get('@field_employee_name').type('manda')
+      cy.get('@field_employee_name').type('Shreshta K adtech')
       
       cy.get('.oxd-autocomplete-option > span').as('select_employee_name')      
       cy.get('@select_employee_name').click()
@@ -27,8 +27,9 @@ describe('Funcionalidade de Admin', () => {
       cy.get('.oxd-select-dropdown > :nth-child(2) > span').as('select_status_enable')      
       cy.get('@select_status_enable').click()
 
-      cy.get(':nth-child(4) > .oxd-input-group > :nth-child(2) > .oxd-input').as('field_username')      
-      cy.get('@field_username').type('UserTest2')
+      cy.get(':nth-child(4) > .oxd-input-group > :nth-child(2) > .oxd-input').as('field_username')
+      const randomNumber = Math.floor(Math.random() * 1000)      
+      cy.get('@field_username').type('UserTest' + randomNumber)
 
       cy.get('.user-password-cell > .oxd-input-group > :nth-child(2) > .oxd-input').as('field_password')      
       cy.get('@field_password').type('User123')
